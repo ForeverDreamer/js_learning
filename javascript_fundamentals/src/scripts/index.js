@@ -10,7 +10,7 @@ const carId = 42;
 
 
 console.log('3) let and var for Variable Declaratiions -------');
-// 变量先使用后声明: let 和 var 都是undefined，推荐使用let替代var
+// 变量先使用后声明: let 和 var 都是undefined(let在小米笔记本的windows系统中抛错误异常)，推荐使用let替代var
 console.log(carName);
 let carName;
 
