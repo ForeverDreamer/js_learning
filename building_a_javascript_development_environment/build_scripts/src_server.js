@@ -1,17 +1,17 @@
-let express = require('express');
-let path = require('path');
-let open = require('open');
+import myExpress from 'express';
+import myPath from 'path';
+import myOpen from 'open';
 
-let port = 3000;
-let app = express();
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../src/index.html'));
+const port = 3000;
+const myApp = myExpress();
+myApp.get('/', function (req, res) {
+    res.sendFile(myPath.join(__dirname, '../src/index.html'));
 });
 
-app.listen(port, function (err) {
+myApp.listen(port, function (err) {
     if (err) {
         console.log(err);
     } else {
-        open('http://localhost:' + port);
+        myOpen('http://localhost:' + port);
     }
 });
