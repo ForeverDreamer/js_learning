@@ -1,17 +1,26 @@
-import myExpress from 'express';
-import myPath from 'path';
-import myOpen from 'open';
+import express from 'express';
+import path from 'path';
+import open from 'open';
+import webpack from 'webpack';
+import config from '../webpack.config.dev';
 
 const port = 3000;
-const myApp = myExpress();
-myApp.get('/', function (req, res) {
-    res.sendFile(myPath.join(__dirname, '../src/index.html'));
+const app = express();
+const compiler = webpack(config);
+
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
+  publicPath: config.output.publicPath
+}));
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
-myApp.listen(port, function (err) {
+app.listen(port, function (err) {
     if (err) {
         console.log(err);
     } else {
-        myOpen('http://localhost:' + port);
+      open('http://localhost:' + port);
     }
 });
