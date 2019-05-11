@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 55386285,
+      "firstName": "Forest",
+      "lastName": "Leffler",
+      "email": "Woodrow25@yahoo.com"
+    },
+    {
+      "id": 77167670,
+      "firstName": "Dominique",
+      "lastName": "Armstrong",
+      "email": "Vicky.Schumm85@yahoo.com"
+    },
+    {
+      "id": 91462820,
+      "firstName": "Gregg",
+      "lastName": "Reilly",
+      "email": "Ron.Romaguera1@hotmail.com"
+    }
+  ]
+}

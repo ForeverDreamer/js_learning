@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
-    "open:src": "babel-node build_scripts/src_server.js",
+    "open:src": "babel-node build_scripts/srcServer.js",
     "localtunnel": "lt --port 3000 --subdomain doer",
-    "prestart": "babel-node build_scripts/start_message.js",
-    "start": "npm-run-all --parallel open:src localtunnel test:watch",
-    "test": "mocha --reporter progress build_scripts/test_setup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "prestart": "babel-node build_scripts/startMessage.js",
+    "start": "npm-run-all --parallel open:src test:watch",
+    "test": "mocha --reporter progress build_scripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node build_scripts/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
   },
   "author": "Cory House",
   "license": "MIT",
